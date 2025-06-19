@@ -11,14 +11,11 @@ def main():
         sys.exit("Command-line argument is not a number.")
 
     try:
-        url = "https://api.coincap.io/v3/assets/bitcoin"
-        headers = {
-            "Authorization": "Bearer 3b28b7004d59997308870b3dc598b666cbe2a38fd14f35756a46d364dbed62ef"
-        }
-        response = requests.get(url, headers=headers)
+        url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd"
+        response = requests.get(url)
         response.raise_for_status()
         data = response.json()
-        price = float(data["data"]["priceUsd"])
+        price = float(data["bitcoin"]["usd"])
         total = bitcoins * price
         print(f"${total:,.4f}")
     except requests.RequestException:
