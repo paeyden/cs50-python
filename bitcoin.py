@@ -1,7 +1,7 @@
 import requests
 import sys
 
-def main():
+def api():
     if len(sys.argv) != 2:
         sys.exit("Missing command-line argument.")
 
@@ -22,4 +22,4 @@ def main():
         sys.exit("Error: Failed to fetch Bitcoin price.")
 
 if __name__ == "__main__":
-    main()
+    api()
