@@ -6,3 +6,4 @@ def test_shorten():
     assert shorten("hello") == "hll"
     assert shorten("HELLO") == "HLL"
     assert shorten("bIngO") == "bng"
+    assert shorten("CS50!") == "CS50!" 
