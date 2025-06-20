@@ -1,11 +1,17 @@
 def twttr():
-    omitted_letters =["a","e", "i", "o", "u", "A", "E", "I", "O", "U"]
     text = input("Enter a text: ")
+    print(shorten(text))
+    
+
+def shorten(word):
     result =""
-    for char in text:
+    omitted_letters =["a","e", "i", "o", "u", "A", "E", "I", "O", "U"]
+    
+    for char in word:
         if char not in omitted_letters:
             result+=char
             
-    print(result,end="")
-twttr()    
-    
+    return result
+
+if __name__ == "__twttr__":   
+    twttr()
